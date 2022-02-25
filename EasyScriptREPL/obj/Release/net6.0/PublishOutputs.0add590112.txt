@@ -1,0 +1,7 @@
+C:\Users\skico\Desktop\完成品\EasyScriptREPL.exe
+C:\Users\skico\Desktop\完成品\EasyScriptREPL.dll
+C:\Users\skico\Desktop\完成品\EasyScriptREPL.deps.json
+C:\Users\skico\Desktop\完成品\EasyScriptREPL.runtimeconfig.json
+C:\Users\skico\Desktop\完成品\EasyScriptREPL.pdb
+C:\Users\skico\Desktop\完成品\EasyScript.dll
+C:\Users\skico\Desktop\完成品\EasyScript.pdb
