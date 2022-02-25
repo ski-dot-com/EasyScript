@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\skico\\source\\repos\\インチキプログラミング言語\\EasyCode\\EasyScript.csproj": {}
+    "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScript\\EasyScript.csproj": {}
   },
   "projects": {
-    "C:\\Users\\skico\\source\\repos\\インチキプログラミング言語\\EasyCode\\EasyScript.csproj": {
+    "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScript\\EasyScript.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skico\\source\\repos\\インチキプログラミング言語\\EasyCode\\EasyScript.csproj",
+        "projectUniqueName": "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScript\\EasyScript.csproj",
         "projectName": "EasyScript",
-        "projectPath": "C:\\Users\\skico\\source\\repos\\インチキプログラミング言語\\EasyCode\\EasyScript.csproj",
+        "projectPath": "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScript\\EasyScript.csproj",
         "packagesPath": "C:\\Users\\skico\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skico\\source\\repos\\インチキプログラミング言語\\EasyCode\\obj\\",
+        "outputPath": "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScript\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
