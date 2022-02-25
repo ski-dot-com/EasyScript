@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyScriptREPL", "EasyScriptREPL\EasyScriptREPL.csproj", "{FDBE178A-79DA-46BE-8C12-F9898EF5D601}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyScript", "EasyCode\EasyScript.csproj", "{B6B147C1-D5BD-4F36-A080-9F116771DAAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyScript", "EasyScript\EasyScript.csproj", "{B6B147C1-D5BD-4F36-A080-9F116771DAAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
