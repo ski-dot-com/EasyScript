@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "EasyScriptREPL/1.0.0": {
+        "dependencies": {
+          "EasyScript": "1.0.0"
+        },
+        "runtime": {
+          "EasyScriptREPL.dll": {}
+        }
+      },
+      "EasyScript/1.0.0": {
+        "runtime": {
+          "EasyScript.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EasyScriptREPL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EasyScript/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
