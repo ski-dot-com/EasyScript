@@ -1,0 +1,12 @@
+C:\Users\skico\source\repos\インチキプログラミング言語\EasyCode\bin\Debug\net6.0\EasyScript.deps.json
+C:\Users\skico\source\repos\インチキプログラミング言語\EasyCode\bin\Debug\net6.0\EasyScript.dll
+C:\Users\skico\source\repos\インチキプログラミング言語\EasyCode\bin\Debug\net6.0\ref\EasyScript.dll
+C:\Users\skico\source\repos\インチキプログラミング言語\EasyCode\bin\Debug\net6.0\EasyScript.pdb
+C:\Users\skico\source\repos\インチキプログラミング言語\EasyCode\obj\Debug\net6.0\EasyScript.csproj.AssemblyReference.cache
+C:\Users\skico\source\repos\インチキプログラミング言語\EasyCode\obj\Debug\net6.0\EasyScript.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skico\source\repos\インチキプログラミング言語\EasyCode\obj\Debug\net6.0\EasyScript.AssemblyInfoInputs.cache
+C:\Users\skico\source\repos\インチキプログラミング言語\EasyCode\obj\Debug\net6.0\EasyScript.AssemblyInfo.cs
+C:\Users\skico\source\repos\インチキプログラミング言語\EasyCode\obj\Debug\net6.0\EasyScript.csproj.CoreCompileInputs.cache
+C:\Users\skico\source\repos\インチキプログラミング言語\EasyCode\obj\Debug\net6.0\EasyScript.dll
+C:\Users\skico\source\repos\インチキプログラミング言語\EasyCode\obj\Debug\net6.0\ref\EasyScript.dll
+C:\Users\skico\source\repos\インチキプログラミング言語\EasyCode\obj\Debug\net6.0\EasyScript.pdb
