@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScriptREPL\\EasyScriptREPL.csproj": {}
+    "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScriptREPL\\EasyScriptREPL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScriptREPL\\EasyScriptREPL.csproj": {
+    "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScriptREPL\\EasyScriptREPL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScriptREPL\\EasyScriptREPL.csproj",
+        "projectUniqueName": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScriptREPL\\EasyScriptREPL.csproj",
         "projectName": "EasyScriptREPL",
-        "projectPath": "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScriptREPL\\EasyScriptREPL.csproj",
+        "projectPath": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScriptREPL\\EasyScriptREPL.csproj",
         "packagesPath": "C:\\Users\\skico\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScriptREPL\\obj\\",
+        "outputPath": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScriptREPL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -35,8 +35,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScript\\EasyScript.csproj": {
-                "projectPath": "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScript\\EasyScript.csproj"
+              "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScript\\EasyScript.csproj": {
+                "projectPath": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScript\\EasyScript.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScript\\EasyScript.csproj": {
+    "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScript\\EasyScript.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScript\\EasyScript.csproj",
+        "projectUniqueName": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScript\\EasyScript.csproj",
         "projectName": "EasyScript",
-        "projectPath": "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScript\\EasyScript.csproj",
+        "projectPath": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScript\\EasyScript.csproj",
         "packagesPath": "C:\\Users\\skico\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skico\\Source\\Repos\\git\\EasyScript\\EasyScript\\obj\\",
+        "outputPath": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScript\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
