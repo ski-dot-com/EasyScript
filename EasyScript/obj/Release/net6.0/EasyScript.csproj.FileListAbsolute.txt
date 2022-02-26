@@ -10,3 +10,15 @@ C:\Users\skico\Source\Repos\git\EasyScript\EasyScript\obj\Release\net6.0\EasyScr
 C:\Users\skico\Source\Repos\git\EasyScript\EasyScript\obj\Release\net6.0\EasyScript.dll
 C:\Users\skico\Source\Repos\git\EasyScript\EasyScript\obj\Release\net6.0\ref\EasyScript.dll
 C:\Users\skico\Source\Repos\git\EasyScript\EasyScript\obj\Release\net6.0\EasyScript.pdb
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\bin\Release\net6.0\EasyScript.deps.json
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\bin\Release\net6.0\EasyScript.dll
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\bin\Release\net6.0\ref\EasyScript.dll
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\bin\Release\net6.0\EasyScript.pdb
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Release\net6.0\EasyScript.csproj.AssemblyReference.cache
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Release\net6.0\EasyScript.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Release\net6.0\EasyScript.AssemblyInfoInputs.cache
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Release\net6.0\EasyScript.AssemblyInfo.cs
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Release\net6.0\EasyScript.csproj.CoreCompileInputs.cache
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Release\net6.0\EasyScript.dll
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Release\net6.0\ref\EasyScript.dll
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Release\net6.0\EasyScript.pdb

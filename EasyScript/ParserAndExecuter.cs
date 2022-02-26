@@ -42,7 +42,7 @@ namespace EasyScript
 					for (; stk.Count > funccallstackdepthes.Peek() && !dict.ContainsKey((string)lst[0]); dict = stk.Pop()) ;
 					if (!dict.ContainsKey((string)lst[0]))
 					{
-						dict = stk.Last();
+						dict = Variables.Last();
 					}
 					if (!dict.ContainsKey((string)lst[0]))
 					{
@@ -52,7 +52,7 @@ namespace EasyScript
 				}
 				catch (KeyNotFoundException)
 				{
-					throw new ExecutionException($"変数\"{(string)lst[0]}\"は、一度も使われていません。ラムダ関数では、外の変数を参照できません。");
+					throw new ExecutionException($"変数\"{(string)lst[0]}\"は、一度も使われていません。ラムダ関数では、グローバル関数以外の外の変数を参照できません。");
 				}
 			};
 			Methods["setv"] = lst =>
@@ -61,10 +61,14 @@ namespace EasyScript
 				{
 					Stack<Dictionary<string, object>> stk = new(Variables);
 					Dictionary<string, object> dict = stk.Pop();
-					for (; stk.Count > funccallstackdepthes.Peek() && dict.ContainsKey((string)lst[0]); dict = stk.Pop()) ;
+					for (; stk.Count > funccallstackdepthes.Peek() && !dict.ContainsKey((string)lst[0]); dict = stk.Pop()) ;
 					if (!dict.ContainsKey((string)lst[0]))
 					{
-						throw new ExecutionException($"変数\"{(string)lst[0]}\"は、一度も使われていません。ラムダ関数では、外の変数を参照できません。");
+						dict = stk.Last();
+					}
+					if (!dict.ContainsKey((string)lst[0]))
+					{
+						throw new ExecutionException($"変数\"{(string)lst[0]}\"は、一度も使われていません。ラムダ関数では、グローバル関数以外の外の変数を参照できません。");
 					}
 					return dict[(string)lst[0]] = lst[1];
 				}
@@ -118,11 +122,27 @@ namespace EasyScript
 			{
 				return Variables.Last()[(string)lst[0]] = lst[1];
 			};
-			Methods["deffunc"] = lst => Methods[(string)lst[0]] = new((arg) =>
+			Methods["func"] = lst => new MethodType((args) =>
 			{
-				return ((BlockType)lst[0])();
+                List<ArgData> t = lst.ToArray()[1..].ToList().ConvertAll(o => (ArgData)o);
+				Dictionary<string, object> dic = new();
+				for (int i = 0; i < t.Count; i++)
+				{
+					var data = t[i];
+                    if (i< args.Count)
+					{
+						var arg = args[i];
+						dic[data.name] = arg ?? data.@default ?? throw new Exception();
+					}
+                    else
+                    {
+						dic[data.name] = data.@default ?? throw new Exception();
+					}
+				}
+				return ((BlockType)lst[0])(dic);
 			});
-			Methods["argdata"] = lst => new ArgData((string)lst[0], lst.Count<2?null:lst[1]); 
+			Methods["deffunc"] = lst => Methods[(string)lst[0]]=(MethodType)lst[1];
+
 			//Methods["getargs"] = lst =>;
 		}
 		#region Configs
@@ -140,15 +160,17 @@ namespace EasyScript
 		public readonly Dictionary<string, MethodType> Methods = new()
 		{
 			["if"] = lst => 
-			(bool)lst[0] ? (lst[1] as BlockType ?? (() => new()))() : ((lst.Count < 2 ? null: lst[2] as BlockType) ?? (() => new()))(),
+			(bool)lst[0] ? (lst[1] as BlockType ?? ((_) => new()))() : ((lst.Count < 2 ? null: lst[2] as BlockType) ?? ((_) => new()))(),
 			["while"] = lst =>
 			{
 				object res = new();
-				while((bool)lst[0]) res = (lst[1] as BlockType ?? (() => new()))();
+				while((bool)lst[0]) res = (lst[1] as BlockType ?? ((_) => new()))();
 				return res;
 			},
-			["run"] = lst=> (lst[0] as BlockType ?? (() => new()))(),
+			["run"] = lst=> (lst[0] as BlockType ?? ((_) => new()))(),
 			["equals"] = lst => lst[0].Equals(lst[1]),
+			["argdata"] = lst => new ArgData((string)lst[0], lst.Count < 2 ? null : lst[1]),
+			["list"] = lst => lst,
 		};
 		public List<string> doesnotMakeScope = new()
 		{
@@ -447,6 +469,17 @@ namespace EasyScript
 						{
 							tokens.Dequeue();
 							return new("set", NodeType.call, new() { new(tok, NodeType.lit, new()), parseLoop(tokens) });
+                        }
+						else if(tokens.Peek() == (":")&& tokens.ElementAt(1)=="=")
+						{
+							tokens.Dequeue();
+							tokens.Dequeue();
+							return new("setg", NodeType.call, new() { new(tok, NodeType.lit, new()), parseLoop(tokens) });
+						}
+						else
+						{
+							tokens.REnqueue(next);
+							goto elsebr;
 						}
 					}
 					else
@@ -458,7 +491,7 @@ namespace EasyScript
 				else goto elsebr;
 				elsebr:;
 				if (('0' <= tok[0] && '9' >= tok[0]) || (tok[0] == '-' && ('0' <= tok[1] && '9' >= tok[1])))
-					return tok.Contains('.') ? new Node(tok, NodeType.flo, new()) : new(tok, NodeType.@int, new());
+					return (tok.Contains('.')|| tok.Contains('e')) ? new Node(tok, NodeType.flo, new()) : new(tok, NodeType.@int, new());
 				return new("getv", NodeType.call, new() { new(tok, NodeType.lit, new()) }); ;
 			}
 		}
@@ -480,9 +513,9 @@ namespace EasyScript
 				var res = node.type switch
 				{
 					NodeType.call => Methods.ContainsKey(node.text)? Methods[node.text](node.Child.ConvertAll(n => Run(n))) : throw new ExecutionException($"関数\"{node.text}\"は、定義されていません。"),
-					NodeType.block => new BlockType(() => {
+					NodeType.block => new BlockType((dict) => {
 						blockcallstackdepthes.Push(Variables.Count);
-						Variables.Push(new());
+						Variables.Push(new(dict??new()));
 						var res_ = node.Child.ConvertAll(n => Run(n)).Last();
 						Variables.Pop(); 
 						blockcallstackdepthes.Pop();
