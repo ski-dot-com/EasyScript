@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "EasyScript/1.0.0": {
+        "dependencies": {
+          "EasyScriptExtentionSupport": "1.0.0"
+        },
         "runtime": {
           "EasyScript.dll": {}
+        }
+      },
+      "EasyScriptExtentionSupport/1.0.0": {
+        "runtime": {
+          "EasyScriptExtentionSupport.dll": {}
         }
       }
     }
   },
   "libraries": {
     "EasyScript/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EasyScriptExtentionSupport/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

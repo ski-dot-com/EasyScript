@@ -34,3 +34,5 @@ C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\obj\De
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\obj\Debug\net6.0\ref\EasyScriptREPL.dll
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\obj\Debug\net6.0\EasyScriptREPL.pdb
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\obj\Debug\net6.0\EasyScriptREPL.genruntimeconfig.cache
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\bin\Debug\net6.0\EasyScriptExtentionSupport.dll
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\bin\Debug\net6.0\EasyScriptExtentionSupport.pdb

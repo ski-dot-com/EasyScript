@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ExtensionTest/1.0.0": {
+        "dependencies": {
+          "EasyScript": "1.0.0"
+        },
+        "runtime": {
+          "ExtensionTest.dll": {}
+        }
+      },
+      "EasyScript/1.0.0": {
+        "dependencies": {
+          "EasyScriptExtentionSupport": "1.0.0"
+        },
+        "runtime": {
+          "EasyScript.dll": {}
+        }
+      },
+      "EasyScriptExtentionSupport/1.0.0": {
+        "runtime": {
+          "EasyScriptExtentionSupport.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ExtensionTest/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EasyScript/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EasyScriptExtentionSupport/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

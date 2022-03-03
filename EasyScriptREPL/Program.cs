@@ -1,7 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using EasyScript;
 ParserAndExecuter parserAndExecuter = new();
-Console.WriteLine($"{parserAndExecuter.Import(new Test())}個のデータがインポートされました。");
+void LoadExtension(object o)
+{
+	Console.WriteLine($"「{o.GetType().FullName}」から、{parserAndExecuter.Import(o)}個のデータがインポートされました。");
+}
+LoadExtension(new Test());
+Console.WriteLine("//help と打つと、ヘルプが出ます。");
 while (true)
 {
 	Console.Write(">");
@@ -14,9 +19,11 @@ while (true)
 	else if (s == "//help")
 	{
 		Console.WriteLine("使い方:  ");
+		Console.WriteLine("//exit: 終了します。");
 		Console.WriteLine("//help: この画面を出します。");
-		//Console.WriteLine("//reference: 主な関数の説明を出します。");
+		Console.WriteLine("//reference: 主な関数の説明を出します。");
 		Console.WriteLine("//beginnershelp: 簡単な説明を出します。");
+		Console.WriteLine("//import (パス): プラグインを読み込みます。");
 	}
 	else if (s == "//beginnershelp")
 	{
@@ -28,7 +35,7 @@ while (true)
 		Console.WriteLine("また、複数の式を打ち込みたいときは、式を「,」でつなぎます。");
 		Console.WriteLine("ex) (式),(式)");
 		Console.ReadKey();
-		Console.WriteLine("式は、七種類あります。(これから増えるかもしれません。)");
+		Console.WriteLine("式は、9種類あります。(これから増えるかもしれません。)");
 		Console.ReadKey();
 		Console.WriteLine("一種類目の式は、「\"」で囲った文字列です。");
 		Console.WriteLine("ex) \"hello\"");
@@ -67,8 +74,10 @@ while (true)
 		Console.WriteLine("ex) (グローバルスコープ)=>(グローバルスコープ)=>(グローバルスコープ)");
 		Console.ReadKey();
 		Console.WriteLine("具体的に言うと、、、");
-		Console.WriteLine("「"+string.Join("」、　「", parserAndExecuter.doesnotMakeScope)+"」");
+		Console.WriteLine("「" + string.Join("」、　「", parserAndExecuter.doesnotMakeScope) + "」");
 		Console.WriteLine("が相当します。");
+		Console.ReadKey();
+		Console.WriteLine("「//」から始まる関数は、内部で使われているものなので、使い方は書いてありません。");
 		Console.ReadKey();
 		Console.WriteLine("三種類目の式は、ブロックです。");
 		Console.WriteLine("ex) {print(\"hello\")}");
@@ -109,10 +118,10 @@ while (true)
 		Console.WriteLine("五種類目の式は、「(式(=を含まない)):=(式)」です。変数を定義することができます。");
 		Console.WriteLine("ex) x:=0");
 		Console.ReadKey();
-		Console.WriteLine("「(式(=を含まない))::=(式)」で、グローバル変数(どこからでも参照できる変数)を定義することができます。");
+		Console.WriteLine("六種類目の式は、「(式(=を含まない))::=(式)」で、グローバル変数(どこからでも参照できる変数)を定義することができます。");
 		Console.WriteLine("ex) x::=0");
 		Console.ReadKey();
-		Console.WriteLine("六種類目の式は、「(式(=を含まない))=(式)」です。定義した変数を設定することができます。");
+		Console.WriteLine("七種類目の式は、「(式(=を含まない))=(式)」です。定義した変数を設定することができます。");
 		Console.WriteLine("ex) x=0");
 		Console.ReadKey();
 		//Console.WriteLine("頭に「::」をつけると、グローバル変数（グローバルスコープ(関数を呼び出す前に定義した変数が属するスコープ)に属する変数）を設定することができます。");
@@ -127,7 +136,7 @@ while (true)
 		//Console.WriteLine("頭に何もついていないと、一番最後に開いたスコープに属する変数を設定することができます。");
 		//Console.WriteLine("ex) x=#0");
 		//Console.ReadKey();
-		Console.WriteLine("七種類目の式は、ただの文字列です。変数を参照することができます。");
+		Console.WriteLine("八種類目の式は、ただの文字列です。変数を参照することができます。");
 		Console.WriteLine("ex) x");
 		Console.ReadKey();
 		//Console.WriteLine("変数の設定の時と同じようなことができます。");
@@ -136,11 +145,41 @@ while (true)
 		//Console.WriteLine("ex) ?0::x");
 		//Console.WriteLine("ex) ?0:x");
 		//Console.ReadKey();
+		Console.WriteLine("九種類目の式は、式をそのまま取得する式です。「@」の後に、「(」と「)」で囲まれたそのまま取得したい式が来ます。");
+		Console.WriteLine("ex) @(x)");
+		Console.ReadKey();
+		Console.WriteLine("式をそのまま取得する式の中で、その時、計算したい値がある場合、「$(」と「)」で囲うと、その時、計算できます。");
+		Console.WriteLine("ex) @(x=$(0))");
+		Console.ReadKey();
+		Console.WriteLine("「$(」と「)」で囲える値は、限られています。具体的に言うと、文字列にできる値です。");
+		Console.WriteLine("ex) @(x=$(0))");
+		Console.ReadKey();
 		Console.WriteLine("「//help」と打つと、短いヘルプが出ます。");
 		Console.ReadKey();
-		//Console.WriteLine("「//reference」と打つと、主な関数の使い方が出ます。");
-		//Console.ReadKey();
+		Console.WriteLine("「//reference」と打つと、主な関数の使い方が出ます。");
+		Console.ReadKey();
 		Console.WriteLine("(終わり)");
+	}
+	else if(s== "//reference")
+	{
+		Console.WriteLine((string)parserAndExecuter.referenceBuilder);
+	}else if(s.StartsWith("//import ")){
+		s = s[9..];
+        while (s[0]==' ')
+			s = s[1..];
+        try
+		{
+			System.Reflection.Assembly asm = System.Reflection.Assembly.LoadFile(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, s));
+			foreach (var item_______ in asm.GetCustomAttributes(typeof(ExtensionAttribute), false))
+			{
+				ExtensionAttribute item = (ExtensionAttribute)item_______;
+				LoadExtension(Activator.CreateInstance(item.export, item.UseParserAndExecuter ? new[] { parserAndExecuter } : Array.Empty<object>()) ?? new());
+			};
+		}
+        catch (Exception e)
+        {
+			Console.Error.WriteLine(e.ToString());
+        }
 	}
 	else if (s.StartsWith("//"));
 	else
@@ -150,20 +189,27 @@ while (true)
 			var trees= parserAndExecuter.Parse(s);
 			System.Diagnostics.Debug.WriteLine(String.Join("\r\n-----\r\n", trees));
 			var reses = parserAndExecuter.Run(trees);
-			if(reses.Any()) Console.WriteLine(reses.Last().ToString());
+			string Stringfy(object o)
+            {
+				try { return parserAndExecuter.Serialize(o); }
+                catch (InvalidOperationException) { return o.ToString()??""; }
+
+			}
+			if(reses.Any()) Console.WriteLine(Stringfy(reses.Last()));
 		}
 		catch (Exception e)
 		{
-			Console.WriteLine(e.ToString());
+			Console.Error.WriteLine(e.ToString());
 		}
 	}
 }
 class Test
 {
-	[ExportMethod]
-	public object print(List<object> list) => ParserAndExecuter.retjunk(_ => Console.WriteLine(_.First().ToString()))(list);
-	[ExportConstant("zero")]
-	public int i = 0;
-	[ExportConstant()]
-	public string text => "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+	[ExportMethod, Summary("引数のオブジェクトを表示します。")]
+	[return:Summary("どんな時でも「null」")]
+	public void print([Summary("表示したいオブジェクト")]object obj) => Console.WriteLine(string.Join(",",obj));
+	[ExportConstant("zero"), Summary("「#0」")]
+	public static int i = 0;
+	[ExportConstant(), Summary("「\"as\"」")]
+	public string text => "as";
 }

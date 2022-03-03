@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "fdbe178a-79da-46be-8c12-f9898ef5d601": {
+      "ProjectGuid": "fdbe178a-79da-46be-8c12-f9898ef5d601",
+      "DisplayName": "EasyScriptREPL",
+      "ColorIndex": 0
+    },
+    "b6b147c1-d5bd-4f36-a080-9f116771daac": {
+      "ProjectGuid": "b6b147c1-d5bd-4f36-a080-9f116771daac",
+      "DisplayName": "EasyScript",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "その他のファイル",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

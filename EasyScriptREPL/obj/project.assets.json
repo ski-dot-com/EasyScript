@@ -5,11 +5,24 @@
       "EasyScript/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "EasyScriptExtentionSupport": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/EasyScript.dll": {}
         },
         "runtime": {
           "bin/placeholder/EasyScript.dll": {}
+        }
+      },
+      "EasyScriptExtentionSupport/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/EasyScriptExtentionSupport.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EasyScriptExtentionSupport.dll": {}
         }
       }
     }
@@ -19,6 +32,11 @@
       "type": "project",
       "path": "../EasyScript/EasyScript.csproj",
       "msbuildProject": "../EasyScript/EasyScript.csproj"
+    },
+    "EasyScriptExtentionSupport/1.0.0": {
+      "type": "project",
+      "path": "../EasyScriptExtentionSupport/EasyScriptExtentionSupport.csproj",
+      "msbuildProject": "../EasyScriptExtentionSupport/EasyScriptExtentionSupport.csproj"
     }
   },
   "projectFileDependencyGroups": {

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "EasyScriptExtentionSupport/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/EasyScriptExtentionSupport.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EasyScriptExtentionSupport.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "EasyScriptExtentionSupport/1.0.0": {
+      "type": "project",
+      "path": "../EasyScriptExtentionSupport/EasyScriptExtentionSupport.csproj",
+      "msbuildProject": "../EasyScriptExtentionSupport/EasyScriptExtentionSupport.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "EasyScriptExtentionSupport >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\skico\\.nuget\\packages\\": {},
@@ -43,7 +62,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScriptExtentionSupport\\EasyScriptExtentionSupport.csproj": {
+              "projectPath": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScriptExtentionSupport\\EasyScriptExtentionSupport.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
