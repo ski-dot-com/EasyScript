@@ -35,11 +35,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScript\\EasyScript.csproj",
+      "projectUniqueName": "C:\\Users\\skico\\Source\\Repos\\EasyScript\\EasyScript\\EasyScript.csproj",
       "projectName": "EasyScript",
-      "projectPath": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScript\\EasyScript.csproj",
+      "projectPath": "C:\\Users\\skico\\Source\\Repos\\EasyScript\\EasyScript\\EasyScript.csproj",
       "packagesPath": "C:\\Users\\skico\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScript\\obj\\",
+      "outputPath": "C:\\Users\\skico\\Source\\Repos\\EasyScript\\EasyScript\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -63,8 +63,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScriptExtentionSupport\\EasyScriptExtentionSupport.csproj": {
-              "projectPath": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\EasyScriptExtentionSupport\\EasyScriptExtentionSupport.csproj"
+            "C:\\Users\\skico\\Source\\Repos\\EasyScript\\EasyScriptExtentionSupport\\EasyScriptExtentionSupport.csproj": {
+              "projectPath": "C:\\Users\\skico\\Source\\Repos\\EasyScript\\EasyScriptExtentionSupport\\EasyScriptExtentionSupport.csproj"
             }
           }
         }

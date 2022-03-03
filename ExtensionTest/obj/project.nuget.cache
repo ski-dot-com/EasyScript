@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y8InxjvTQSFEFXPr1p5+GEDlGSKjd3aGPj1CaiHBeJuDW3Sl5bQOWk/CW3MkgkNYdF2pu5oVQqIiSxkfrW6sTg==",
+  "dgSpecHash": "BIwFRO0O/rYSBov4l8w/bW+wwSzQFOW13BPdzqNHOWaNbs+SIltBkmYqLQb9G7qEGQ4Ftb8HX6ih+hSEfK6VFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\skico\\Source\\Repos\\ski-dot-com\\EasyScript_private\\ExtensionTest\\ExtensionTest.csproj",
+  "projectFilePath": "C:\\Users\\skico\\Source\\Repos\\EasyScript\\ExtensionTest\\ExtensionTest.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
