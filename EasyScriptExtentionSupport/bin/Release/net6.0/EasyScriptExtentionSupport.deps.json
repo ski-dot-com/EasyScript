@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "EasyScriptExtentionSupport/1.0.0": {
+        "runtime": {
+          "EasyScriptExtentionSupport.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EasyScriptExtentionSupport/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

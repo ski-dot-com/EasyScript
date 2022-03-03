@@ -22,3 +22,6 @@ C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Releas
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Release\net6.0\EasyScript.dll
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Release\net6.0\ref\EasyScript.dll
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Release\net6.0\EasyScript.pdb
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\bin\Release\net6.0\EasyScriptExtentionSupport.dll
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\bin\Release\net6.0\EasyScriptExtentionSupport.pdb
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScript\obj\Release\net6.0\EasyScript.csproj.CopyComplete

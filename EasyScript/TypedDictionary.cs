@@ -34,7 +34,16 @@ namespace EasyScript
 		public record struct TypedValue(Type Type, V Value);
 		Dictionary<K, TypedValue> datas=new();
 
-		public V this[K key] { get => datas[key].Value; set => datas[key]=new(Type.All, value); }
+        public TypedDictionary(TypedDictionary<K, V> from)
+        {
+            this.datas = new(from.datas);
+        }
+
+        public TypedDictionary()
+        {
+        }
+
+        public V this[K key] { get => datas[key].Value; set => datas[key]=new(Type.All, value); }
 
 		public ICollection<K> Keys => datas.Keys;
 

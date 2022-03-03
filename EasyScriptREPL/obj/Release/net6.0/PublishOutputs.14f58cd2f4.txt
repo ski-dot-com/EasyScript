@@ -4,4 +4,6 @@ C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\bin\Re
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\bin\Release\net6.0\publish\EasyScriptREPL.runtimeconfig.json
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\bin\Release\net6.0\publish\EasyScriptREPL.pdb
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\bin\Release\net6.0\publish\EasyScript.dll
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\bin\Release\net6.0\publish\EasyScriptExtentionSupport.dll
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\bin\Release\net6.0\publish\EasyScript.pdb
+C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptREPL\bin\Release\net6.0\publish\EasyScriptExtentionSupport.pdb

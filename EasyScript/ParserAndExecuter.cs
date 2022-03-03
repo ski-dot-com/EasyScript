@@ -21,17 +21,17 @@ namespace EasyScript
 		public class ReferenceBuilder
 		{
 			string methods = "", constants = "";
-			Dictionary<string,MethodInfo> methoddatas = new();
-			Dictionary<string, (Type type, string? summary)> constantdatas=new();
+			TypedDictionary<string,MethodInfo> methoddatas = new();
+			TypedDictionary<string, (System.Type type, string? summary)> constantdatas=new();
 			public void AddMethod(MethodInfo methodInfo, string name)
 			{
 				methoddatas[name]= methodInfo;
 			}
-			public void AddConstants(string name,Type type, string? summary = null)
+			public void AddConstants(string name, System.Type type, string? summary = null)
 			{
 				constantdatas[name] = (type,summary);
 			}
-			public void AddConstantstring(string name, Type type, string? summary)
+			public void AddConstantstring(string name, System.Type type, string? summary)
 			{
 				constants += $"{type.FullName} {name}\r\n";
 				if(summary is not null) constants += "\t説明:\r\n\t\t" + summary.Replace("\r\n", "\r\n\t\t") + "\r\n";
@@ -169,7 +169,7 @@ namespace EasyScript
 				var res= new MethodType((args) =>
 				{
 					This.funccallstackdepthes.Push(This.Variables.Count);
-					Dictionary<string, object> dic = new();
+					TypedDictionary<string, object> dic = new();
 					for (int i = 0; i < t.Count; i++)
 					{
 						var data = t[i];
@@ -215,8 +215,8 @@ namespace EasyScript
 			Methods["//getv"] = 
 				new MethodType(lst => { 
 					try { 
-						Stack<Dictionary<string, object>> stk = new(Variables.Reverse()); 
-						Dictionary<string, object> dict = stk.Pop(); 
+						Stack<TypedDictionary<string, object>> stk = new(Variables.Reverse()); 
+						TypedDictionary<string, object> dict = stk.Pop(); 
 						for (; stk.Count > funccallstackdepthes.Peek() && !dict.ContainsKey((string)lst[0]); dict = stk.Pop()) ; 
 						if (!dict.ContainsKey((string)lst[0])) { 
 							dict = Variables.Last();
@@ -231,14 +231,14 @@ namespace EasyScript
 					} 
 				}).checkParamCount(1, name: "//getv");
 			Methods["//setv"] = 
-				new MethodType(lst => { try { Stack<Dictionary<string, object>> stk = new(Variables); Dictionary<string, object> dict = stk.Pop(); for (; stk.Count > funccallstackdepthes.Peek() && !dict.ContainsKey((string)lst[0]); dict = stk.Pop()) ; if (!dict.ContainsKey((string)lst[0])) { dict = Variables.Last(); } if (!dict.ContainsKey((string)lst[0])) { throw new ExecutionException($"変数\"{(string)lst[0]}\"は、定義されていません。ラムダ関数では、グローバル関数以外の外の変数を設定できません。"); } return dict[(string)lst[0]] = lst[1]; } catch (KeyNotFoundException) { throw new ExecutionException($"変数\"{(string)lst[0]}\"は、定義されていません。ラムダ関数では、グローバル関数以外の外の変数を設定できません。"); } }).checkParamCount(2, name: "//setv");
+				new MethodType(lst => { try { Stack<TypedDictionary<string, object>> stk = new(Variables); TypedDictionary<string, object> dict = stk.Pop(); for (; stk.Count > funccallstackdepthes.Peek() && !dict.ContainsKey((string)lst[0]); dict = stk.Pop()) ; if (!dict.ContainsKey((string)lst[0])) { dict = Variables.Last(); } if (!dict.ContainsKey((string)lst[0])) { throw new ExecutionException($"変数\"{(string)lst[0]}\"は、定義されていません。ラムダ関数では、グローバル関数以外の外の変数を設定できません。"); } return dict[(string)lst[0]] = lst[1]; } catch (KeyNotFoundException) { throw new ExecutionException($"変数\"{(string)lst[0]}\"は、定義されていません。ラムダ関数では、グローバル関数以外の外の変数を設定できません。"); } }).checkParamCount(2, name: "//setv");
 			Methods["//setg"] = 
 				new MethodType(lst => { return Variables.Last()[(string)lst[0]] = lst[1]; }).checkParamCount(2, name: "//setg");
 			Methods["func"] = new MethodType(lst => new MethodType((args) =>
 			{
 				funccallstackdepthes.Push(Variables.Count);
 				List<ArgData> t = lst.ToArray()[1..].ToList().ConvertAll(o => (ArgData)o);
-				Dictionary<string, object> dic = new();
+				TypedDictionary<string, object> dic = new();
 				for (int i = 0; i < t.Count; i++)
 				{
 					var data = t[i];
@@ -392,7 +392,7 @@ namespace EasyScript
 			"=",
 			":",
 		};
-		public readonly Dictionary<string, MethodType> Methods = new()
+		public readonly TypedDictionary<string, MethodType> Methods = new()
 		{
 			["if"] = new MethodType(lst => 
 			(bool)lst[0] 
@@ -415,7 +415,7 @@ namespace EasyScript
 			"//getv",
 			"//setv",
 		};
-		public Dictionary<string, object> Constants = new()
+		public TypedDictionary<string, object> Constants = new()
 		{
 			["true"] = true,
 			["false"] = false,
@@ -779,7 +779,7 @@ namespace EasyScript
 		public static Null Null => Null.Instance;
 
 		public List<ISerializer> Serializers => serializers;
-		public readonly Stack<Dictionary<string, object>> Variables = new();
+		public readonly Stack<TypedDictionary<string, object>> Variables = new();
 		public object Run(Node node)
 		{
 			if(node.type == NodeType.call && !doesnotMakeScope.Contains(node.text)) Variables.Push(new());
