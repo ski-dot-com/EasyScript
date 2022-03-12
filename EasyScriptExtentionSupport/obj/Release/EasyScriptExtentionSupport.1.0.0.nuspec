@@ -10,6 +10,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptExtentionSupport\bin\Release\net6.0\EasyScriptExtentionSupport.dll" target="lib\net6.0\EasyScriptExtentionSupport.dll" />
+    <file src="C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\bin\Release\net6.0\EasyScriptExtentionSupport.dll" target="lib\net6.0\EasyScriptExtentionSupport.dll" />
   </files>
 </package>

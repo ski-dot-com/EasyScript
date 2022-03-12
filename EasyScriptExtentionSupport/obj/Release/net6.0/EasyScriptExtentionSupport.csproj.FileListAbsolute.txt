@@ -10,3 +10,15 @@ C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptExtentionSu
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptExtentionSupport\obj\Release\net6.0\EasyScriptExtentionSupport.dll
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptExtentionSupport\obj\Release\net6.0\ref\EasyScriptExtentionSupport.dll
 C:\Users\skico\Source\Repos\ski-dot-com\EasyScript_private\EasyScriptExtentionSupport\obj\Release\net6.0\EasyScriptExtentionSupport.pdb
+C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\bin\Release\net6.0\EasyScriptExtentionSupport.deps.json
+C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\bin\Release\net6.0\EasyScriptExtentionSupport.dll
+C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\bin\Release\net6.0\ref\EasyScriptExtentionSupport.dll
+C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\bin\Release\net6.0\EasyScriptExtentionSupport.pdb
+C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\obj\Release\net6.0\EasyScriptExtentionSupport.csproj.AssemblyReference.cache
+C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\obj\Release\net6.0\EasyScriptExtentionSupport.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\obj\Release\net6.0\EasyScriptExtentionSupport.AssemblyInfoInputs.cache
+C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\obj\Release\net6.0\EasyScriptExtentionSupport.AssemblyInfo.cs
+C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\obj\Release\net6.0\EasyScriptExtentionSupport.csproj.CoreCompileInputs.cache
+C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\obj\Release\net6.0\EasyScriptExtentionSupport.dll
+C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\obj\Release\net6.0\ref\EasyScriptExtentionSupport.dll
+C:\Users\skico\Source\Repos\EasyScript\EasyScriptExtentionSupport\obj\Release\net6.0\EasyScriptExtentionSupport.pdb

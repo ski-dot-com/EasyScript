@@ -40,24 +40,24 @@ namespace EasyScript
 			{
 				var opt = methodInfo.GetParameters().Where(p => p.IsOptional);
 				methods += $"{methodInfo.ReturnType.FullName} {name} ({ string.Join(", ", methodInfo.GetParameters().Where(p=>!p.IsOptional).ToList().ConvertAll(p => $"{(p.GetCustomAttributes<ParamArrayAttribute>().Any() ? "..." : "")}{p.ParameterType.FullName} {p.Name}"))+(opt.Any()?$"[, {string.Join(", ", opt.ToList().ConvertAll(p => $"{(p.GetCustomAttributes<ParamArrayAttribute>().Any() ? "..." : "")}{p.ParameterType.FullName} {p.Name}"))}]":"") })" + "\r\n";
-				var sum = methodInfo.GetCustomAttributes(typeof(SummaryAttribute));
+				var sum = methodInfo.GetCustomAttributes(typeof(ExplanationAttribute));
 				if (sum.Any())
 				{
-					methods += "\t説明:\r\n\t\t" + ((SummaryAttribute)sum.First()).Description.Replace("\r\n", "\r\n\t\t") + "\r\n";
+					methods += "\t説明:\r\n\t\t" + ((ExplanationAttribute)sum.First()).Description.Replace("\r\n", "\r\n\t\t") + "\r\n";
 				}
 
 				foreach (var item in methodInfo.GetParameters())
 				{
-					var psum = item.GetCustomAttributes(typeof(SummaryAttribute));
+					var psum = item.GetCustomAttributes(typeof(ExplanationAttribute));
 					if (psum.Any())
 					{
-						methods += $"\t{item.Name}:\r\n\t\t" + ((SummaryAttribute)psum.First()).Description.Replace("\r\n", "\r\n\t\t") + "\r\n";
+						methods += $"\t{item.Name}:\r\n\t\t" + ((ExplanationAttribute)psum.First()).Description.Replace("\r\n", "\r\n\t\t") + "\r\n";
 					}
 				}
-				var rsum = methodInfo.ReturnTypeCustomAttributes.GetCustomAttributes(typeof(SummaryAttribute),false).Concat(methodInfo.ReturnTypeCustomAttributes.GetCustomAttributes(typeof(SummaryAttribute), true));
+				var rsum = methodInfo.ReturnTypeCustomAttributes.GetCustomAttributes(typeof(ExplanationAttribute),false).Concat(methodInfo.ReturnTypeCustomAttributes.GetCustomAttributes(typeof(ExplanationAttribute), true));
 				if (rsum.Any())
 				{
-					methods += $"\t返り値:\r\n\t\t" + ((SummaryAttribute)rsum.First()).Description.Replace("\r\n", "\r\n\t\t") + "\r\n";
+					methods += $"\t返り値:\r\n\t\t" + ((ExplanationAttribute)rsum.First()).Description.Replace("\r\n", "\r\n\t\t") + "\r\n";
 				}
 			}
 			public static explicit operator string (ReferenceBuilder self)
@@ -86,22 +86,22 @@ namespace EasyScript
 		record InternalExtention(ParserAndExecuter This)
 		{
 
-			[ExportConstant("true"),Summary("真偽値の「真」を表す値。")]
+			[ExportConstant("true"),Explanation("真偽値の「真」を表す値。")]
 			public bool t = true;
-			[ExportConstant("false"), Summary("真偽値の「偽」を表す値。")]
+			[ExportConstant("false"), Explanation("真偽値の「偽」を表す値。")]
 			public bool f = false;
-			[ExportConstant, Summary("何もないことを表す「null」という特別な値。")]
+			[ExportConstant, Explanation("何もないことを表す「null」という特別な値。")]
 			public Null @null = Null;
-			[ExportMethod("if"), Summary("条件分岐を行うための関数。")]
-			[return:Summary("ブロックが計算した値か「null」")]
-			public static object If([Summary("条件")] bool con, [Summary("条件が真のときに計算するブロック。")] BlockType t, [Summary("条件が偽のときに計算するブロック。")] BlockType? f = null)
+			[ExportMethod("if"), Explanation("条件分岐を行うための関数。")]
+			[return:Explanation("ブロックが計算した値か「null」")]
+			public static object If([Explanation("条件")] bool con, [Explanation("条件が真のときに計算するブロック。")] BlockType t, [Explanation("条件が偽のときに計算するブロック。")] BlockType? f = null)
 			{
 				f ??= new(_ => Null);
 				return con ? t() : f();
 			}
-			[ExportMethod("while"), Summary("繰り返しを行うための関数。条件が真の間繰り返す。")]
-			[return: Summary("ブロックが最後に計算した値か「null」")]
-			public object While([Summary("繰り返しの条件の式")] Node con, [Summary("繰り返し計算するブロック。")] BlockType t)
+			[ExportMethod("while"), Explanation("繰り返しを行うための関数。条件が真の間繰り返す。")]
+			[return: Explanation("ブロックが最後に計算した値か「null」")]
+			public object While([Explanation("繰り返しの条件の式")] Node con, [Explanation("繰り返し計算するブロック。")] BlockType t)
 			{
 				object res = Null;
 				while (This.Run(con) as bool? ?? false)
@@ -110,60 +110,60 @@ namespace EasyScript
 				}
 				return res;
 			}
-			[ExportMethod, Summary("右と左を足す関数。")]
-			[return:Summary("答え")]
+			[ExportMethod, Explanation("右と左を足す関数。")]
+			[return:Explanation("答え")]
 			public long add(long l, long r)
 			{
 				return l + r;
 			}
-			[ExportMethod, Summary("右と左を足す関数。")]
-			[return: Summary("答え")]
+			[ExportMethod, Explanation("右と左を足す関数。")]
+			[return: Explanation("答え")]
 			public double addf(double l, double r)
 			{
 				return l + r;
 			}
-			[ExportMethod, Summary("右から左を引く関数。")]
-			[return: Summary("答え")]
+			[ExportMethod, Explanation("右から左を引く関数。")]
+			[return: Explanation("答え")]
 			public long sub(long l, long r)
 			{
 				return l - r;
 			}
-			[ExportMethod, Summary("右から左を引く関数。")]
-			[return: Summary("答え")]
+			[ExportMethod, Explanation("右から左を引く関数。")]
+			[return: Explanation("答え")]
 			public double subf(double l, double r)
 			{
 				return l - r;
 			}
-			[ExportMethod, Summary("引数の真偽の反転を行う関数。")]
-			[return: Summary("答え")]
+			[ExportMethod, Explanation("引数の真偽の反転を行う関数。")]
+			[return: Explanation("答え")]
 			public bool not(bool @in) => !@in;
-			[ExportMethod, Summary("ブロックを計算する。")]
-			[return: Summary("計算された値")]
-			public object run([Summary("計算するブロック")] BlockType block)
+			[ExportMethod, Explanation("ブロックを計算する。")]
+			[return: Explanation("計算された値")]
+			public object run([Explanation("計算するブロック")] BlockType block)
 			{
 				return block();
 			}
-			[ExportMethod, Summary("式を計算する。")]
-			[return: Summary("計算された値")]
-			public object eval([Summary("計算する式")] Node node)
+			[ExportMethod, Explanation("式を計算する。")]
+			[return: Explanation("計算された値")]
+			public object eval([Explanation("計算する式")] Node node)
 			{
 				return This.Run(node);
 			}
-			[ExportMethod, Summary("データを文字列にする。")]
-			[return: Summary("文字列になったデータ。")]
-			public string serialize([Summary("文字列にしたいデータ")] object obj)
+			[ExportMethod, Explanation("データを文字列にする。")]
+			[return: Explanation("文字列になったデータ。")]
+			public string serialize([Explanation("文字列にしたいデータ")] object obj)
 			{
 				return This.Serialize(obj);
 			}
-			[ExportMethod, Summary("文字列にしたデータをもとに戻す。")]
-			[return: Summary("もとに戻ったデータ。")]
-			public object deserialize([Summary("もとに戻したいデータ")] string s)
+			[ExportMethod, Explanation("文字列にしたデータをもとに戻す。")]
+			[return: Explanation("もとに戻ったデータ。")]
+			public object deserialize([Explanation("もとに戻したいデータ")] string s)
 			{
 				return This.Deserialize(s);
 			}
-            [ExportMethod, Summary("関数を定義する関数。")]
-            [return: Summary("定義された関数。")]
-            public MethodType func([Summary(@"関数の名前。「""""」とすると、無名関数になる。")] string name, [Summary("関数の本体。引数を変数として使用できる。")] BlockType blockType, [Summary("引数。何個でも入れることができる。「argdata」で得られた値でないと、エラーになる。")] params object[] datas)
+            [ExportMethod, Explanation("関数を定義する関数。")]
+            [return: Explanation("定義された関数。")]
+            public MethodType func([Explanation(@"関数の名前。「""""」とすると、無名関数になる。")] string name, [Explanation("関数の本体。引数を変数として使用できる。")] BlockType blockType, [Explanation("引数。何個でも入れることができる。「argdata」で得られた値でないと、エラーになる。")] params object[] datas)
 			{
 				List<ArgData> t = datas.ToList().ConvertAll(t => (ArgData)t);
 				var res= new MethodType((args) =>
@@ -975,10 +975,10 @@ namespace EasyScript
 					if (tmp__ is not null)
 					{
 						Constants[attr.Name ?? item.Name] = tmp__;
-						var ien = item.GetCustomAttributes(typeof(SummaryAttribute));
+						var ien = item.GetCustomAttributes(typeof(ExplanationAttribute));
 						if (ien.Any())
 						{
-							referenceBuilder.AddConstants(attr.Name ?? item.Name, item.PropertyType,((SummaryAttribute)ien.First()).Description);
+							referenceBuilder.AddConstants(attr.Name ?? item.Name, item.PropertyType,((ExplanationAttribute)ien.First()).Description);
 						}
 						else
 						{
@@ -1002,10 +1002,10 @@ namespace EasyScript
 					if (tmp__ is not null)
 					{
 						Constants[attr.Name ?? item.Name] = tmp__;
-						var ien = item.GetCustomAttributes(typeof(SummaryAttribute));
+						var ien = item.GetCustomAttributes(typeof(ExplanationAttribute));
 						if (ien.Any())
 						{
-							referenceBuilder.AddConstants(attr.Name ?? item.Name, item.FieldType, ((SummaryAttribute)ien.First()).Description);
+							referenceBuilder.AddConstants(attr.Name ?? item.Name, item.FieldType, ((ExplanationAttribute)ien.First()).Description);
 						}
 						else
 						{

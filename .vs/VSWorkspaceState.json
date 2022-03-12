@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\EasyScriptExtentionSupport",
+    "\\ExtensionTest"
   ],
-  "SelectedNode": "\\EasyScript.sln",
+  "SelectedNode": "\\EasyScriptExtentionSupport\\SummaryAttribute.cs",
   "PreviewInSolutionExplorer": false
 }

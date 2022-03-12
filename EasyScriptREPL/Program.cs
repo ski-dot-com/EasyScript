@@ -205,11 +205,11 @@ while (true)
 }
 class Test
 {
-	[ExportMethod, Summary("引数のオブジェクトを表示します。")]
-	[return:Summary("どんな時でも「null」")]
-	public void print([Summary("表示したいオブジェクト")]object obj) => Console.WriteLine(string.Join(",",obj));
-	[ExportConstant("zero"), Summary("「#0」")]
+	[ExportMethod, Explanation("引数のオブジェクトを表示します。")]
+	[return:Explanation("どんな時でも「null」")]
+	public void print([Explanation("表示したいオブジェクト")]object obj) => Console.WriteLine(string.Join(",",obj));
+	[ExportConstant("zero"), Explanation("「#0」")]
 	public static int i = 0;
-	[ExportConstant(), Summary("「\"as\"」")]
+	[ExportConstant(), Explanation("「\"as\"」")]
 	public string text => "as";
 }
