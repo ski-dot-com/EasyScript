@@ -15,7 +15,22 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "その他のファイル",
       "ColorIndex": -1
+    },
+    "5136396d-99d1-4245-931d-62eb44cac834": {
+      "ProjectGuid": "5136396d-99d1-4245-931d-62eb44cac834",
+      "DisplayName": "EasyScriptGUI",
+      "ColorIndex": 2
+    },
+    "3278a5c9-c63a-4884-8431-de3b70315e48": {
+      "ProjectGuid": "3278a5c9-c63a-4884-8431-de3b70315e48",
+      "DisplayName": "ExtensionTest",
+      "ColorIndex": 3
+    },
+    "73d35186-8c32-4e50-b7a8-37aad577c8ce": {
+      "ProjectGuid": "73d35186-8c32-4e50-b7a8-37aad577c8ce",
+      "DisplayName": "EasyScriptExtentionSupport",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 5
 }

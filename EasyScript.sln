@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyScriptREPL", "EasyScrip
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyScript", "EasyScript\EasyScript.csproj", "{B6B147C1-D5BD-4F36-A080-9F116771DAAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyScriptExtentionSupport", "EasyScriptExtentionSupport\EasyScriptExtentionSupport.csproj", "{73D35186-8C32-4E50-B7A8-37AAD577C8CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EasyScriptExtentionSupport", "EasyScriptExtentionSupport\EasyScriptExtentionSupport.csproj", "{73D35186-8C32-4E50-B7A8-37AAD577C8CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionTest", "ExtensionTest\ExtensionTest.csproj", "{3278A5C9-C63A-4884-8431-DE3B70315E48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionTest", "ExtensionTest\ExtensionTest.csproj", "{3278A5C9-C63A-4884-8431-DE3B70315E48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyScriptGUI", "EasyScriptGUI\EasyScriptGUI.csproj", "{5136396D-99D1-4245-931D-62EB44CAC834}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3278A5C9-C63A-4884-8431-DE3B70315E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3278A5C9-C63A-4884-8431-DE3B70315E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3278A5C9-C63A-4884-8431-DE3B70315E48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5136396D-99D1-4245-931D-62EB44CAC834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5136396D-99D1-4245-931D-62EB44CAC834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5136396D-99D1-4245-931D-62EB44CAC834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5136396D-99D1-4245-931D-62EB44CAC834}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

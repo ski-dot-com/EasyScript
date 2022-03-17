@@ -192,7 +192,8 @@ while (true)
 			string Stringfy(object o)
             {
 				try { return parserAndExecuter.Serialize(o); }
-                catch (InvalidOperationException) { return o.ToString()??""; }
+				catch (InvalidOperationException) { return o.ToString() ?? ""; }
+				catch (NotSupportedException) { return o.ToString() ?? ""; }
 
 			}
 			if(reses.Any()) Console.WriteLine(Stringfy(reses.Last()));

@@ -8,28 +8,7 @@ using System.Threading.Tasks;
 
 namespace EasyScript
 {
-	public abstract class Type
-	{
-		public abstract bool isInstance(object o);
-		public abstract bool isSupertypeof(Type o);
-		public class AllType : Type
-		{
-			public override bool isInstance(object o)
-			{
-				return true;
-			}
-
-			public override bool isSupertypeof(Type o)
-			{
-				return true;
-			}
-		}
-
-		private static readonly Type all = new AllType();
-
-		public static Type All => all;
-	}
-	public class TypedDictionary<K,V> : IDictionary<K, V> , IDictionary<K, TypedDictionary<K, V>.TypedValue> where K : notnull 
+    public class TypedDictionary<K,V> : IDictionary<K, V> , IDictionary<K, TypedDictionary<K, V>.TypedValue> where K : notnull 
 	{
 		public record struct TypedValue(Type Type, V Value);
 		Dictionary<K, TypedValue> datas=new();
@@ -43,7 +22,17 @@ namespace EasyScript
         {
         }
 
-        public V this[K key] { get => datas[key].Value; set => datas[key]=new(Type.All, value); }
+        [Serializable]
+        public class TypeException : Exception
+        {
+            public TypeException() { }
+            public TypeException(string message) : base(message) { }
+            public TypeException(string message, Exception inner) : base(message, inner) { }
+            protected TypeException(
+              System.Runtime.Serialization.SerializationInfo info,
+              System.Runtime.Serialization.StreamingContext context) : base(info, context) { }
+        }
+        public V this[K key] { get => datas[key].Value; set =>_= datas.ContainsKey(key)? value is not null && datas[key].Type.isInstance(value) ? datas[key] = new(datas[key].Type, value) : throw new TypeException($"変数「{key}」の型が合いませんでした。") : datas[key] = new(Type.All, value); }
 
 		public ICollection<K> Keys => datas.Keys;
 
