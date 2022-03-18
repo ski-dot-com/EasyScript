@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+MA50cZHY5vmo2FL6PG9n2B60VIKC2QSJX1Y1brM2A8IlaWoM0DV40pVgVAnbmWqfb9Uu6GlwTnG2JqdKJMf9g==",
+  "dgSpecHash": "rgVq1IswmJJhVc6lagpBN1HxptknBO7dXXqkbbhrAvlf2KWpTCwcFwxeaCffs6gcUhhwbb1yXew7taoIFTp3oA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\skico\\Source\\Repos\\EasyScript\\EasyScriptREPL\\EasyScriptREPL.csproj",
+  "projectFilePath": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptREPL\\EasyScriptREPL.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

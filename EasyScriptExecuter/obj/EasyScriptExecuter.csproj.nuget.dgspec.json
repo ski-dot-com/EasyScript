@@ -1,9 +1,74 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptREPL\\EasyScriptREPL.csproj": {}
+    "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptExecuter\\EasyScriptExecuter.csproj": {}
   },
   "projects": {
+    "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptExecuter\\EasyScriptExecuter.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptExecuter\\EasyScriptExecuter.csproj",
+        "projectName": "EasyScriptExecuter",
+        "projectPath": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptExecuter\\EasyScriptExecuter.csproj",
+        "packagesPath": "C:\\Users\\skico\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptExecuter\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\skico\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScript\\EasyScript.csproj": {
+                "projectPath": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScript\\EasyScript.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptExtentionSupport\\EasyScriptExtentionSupport.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -35,71 +100,6 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptREPL\\EasyScriptREPL.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptREPL\\EasyScriptREPL.csproj",
-        "projectName": "EasyScriptREPL",
-        "projectPath": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptREPL\\EasyScriptREPL.csproj",
-        "packagesPath": "C:\\Users\\skico\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptREPL\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\skico\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScript\\EasyScript.csproj": {
-                "projectPath": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScript\\EasyScript.csproj"
-              }
-            }
           }
         },
         "warningProperties": {

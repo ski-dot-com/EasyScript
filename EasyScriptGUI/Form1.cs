@@ -52,10 +52,7 @@ namespace EasyScriptGUI
                 using (var fs = File.Create(sf.FileName))
                 {
                     using var bw = new BinaryWriter(fs);
-                    foreach(var item in tmp)
-                    {
-
-                    }
+                    bw.Write(JsonSerializer.Serialize(tmp));
                     bw.Flush();
                 }
                 toolStripProgressBar1.PerformStep();
