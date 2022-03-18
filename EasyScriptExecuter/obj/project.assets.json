@@ -53,11 +53,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptREPL\\EasyScriptREPL.csproj",
-      "projectName": "EasyScriptREPL",
-      "projectPath": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptREPL\\EasyScriptREPL.csproj",
+      "projectUniqueName": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptExecuter\\EasyScriptExecuter.csproj",
+      "projectName": "EasyScriptExecuter",
+      "projectPath": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptExecuter\\EasyScriptExecuter.csproj",
       "packagesPath": "C:\\Users\\skico\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptREPL\\obj\\",
+      "outputPath": "C:\\Users\\skico\\source\\repos\\EasyScript\\EasyScriptExecuter\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

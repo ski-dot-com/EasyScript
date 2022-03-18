@@ -30,7 +30,12 @@
       "ProjectGuid": "73d35186-8c32-4e50-b7a8-37aad577c8ce",
       "DisplayName": "EasyScriptExtentionSupport",
       "ColorIndex": 4
+    },
+    "ad4d0db8-8247-4e79-ba33-9dbe9bbeae1e": {
+      "ProjectGuid": "ad4d0db8-8247-4e79-ba33-9dbe9bbeae1e",
+      "DisplayName": "EasyScriptExecuter",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 6
 }
